@@ -23,11 +23,13 @@ public class NBody {
 	
 		// TODO: read values at beginning of file to
 		// find the radius
+		s.nextInt();
+		double radius = s.nextDouble();
 		
 		s.close();
 		
 		// TODO: return radius read
-		return 0;	
+		return radius;	
 	}
 	
 	/**
@@ -43,17 +45,44 @@ public class NBody {
 			
 			// TODO: read # bodies, create array, ignore radius
 			int nb = 0; // # bodies to be read
+			//int bodies = s.nextInt();
+			//double radius = s.nextDouble();
+			while (s.hasNextDouble()) {
+		          nb += 1;
+		          s.nextDouble();
+		         
+		      }
+			nb = (nb - 1)/5;
+			Body[] bod = new Body[nb];
+			
+			
+			
+			//s.reset();
+			//s.nextInt();
+			//double radius = s.nextDouble();
+			s.close();
+			Scanner t = new Scanner(new File(fname));
 			
 			for(int k=0; k < nb; k++) {
 				
 				// TODO: read data for each body
 				// construct new body object and add to array
+				
+				double myXPos = t.nextDouble();
+				double myYPos = t.nextDouble();
+				double myXVel = t.nextDouble();
+				double myYVel = t.nextDouble();
+				double myMass = t.nextDouble();
+				String myFileName = t.next();
+				bod[k] = new Body(myXPos,myYPos,myXVel,myYVel,myMass,myFileName);
+				t.nextLine();
+				
 			}
 			
-			s.close();
+			t.close();
 			
 			// TODO: return array of body objects read
-			return null;
+			return bod;
 	}
 	public static void main(String[] args) throws FileNotFoundException{
 		double totalTime = 157788000.0;

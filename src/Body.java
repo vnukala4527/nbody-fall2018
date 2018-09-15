@@ -128,13 +128,26 @@ public class Body {
 		
 		
 	}
-	/*
+	
 	public void update(double deltaT, double xforce, double yforce) {
+		double ax = xforce / this.getMass();
+		double ay = yforce / this.getMass();
+		double nvx = myXVel + (deltaT * ax);
+		double nvy = myYVel + (deltaT * ay);
+		double nx = myXPos + deltaT*nvx;
+		double ny = myYPos + deltaT*nvy;
+		myXPos = nx;
+		myYPos = ny;
+		myXVel = nvx;
+		myYVel = nvy;
+					
+		
 		
 	}
 	
+
 	public void draw() {
 		
-	} */
+	} 
 }
 
