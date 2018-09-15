@@ -105,12 +105,28 @@ public class NBody {
 			
 			// TODO: create double arrays xforces and yforces
 			// to hold forces on each body
+			double[] xForces = new double[bodies.length];
+			double[] yForces = new double[bodies.length];
+			
+			
+			
 			
 			// TODO: loop over all bodies, calculate
 			// net forces and store in xforces and yforces
+			for (int k = 0;k < bodies.length; k++) {
+				xForces[k] = bodies[k].calcNetForceExertedByX(bodies);
+				yForces[k] = bodies[k].calcNetForceExertedByY(bodies);
+				
+				
+				
+			}
 			
 			// TODO: loop over all bodies and call update
 			// with dt and corresponding xforces, yforces values
+			for (int i = 0;i < bodies.length; i++) {
+				bodies[i].update(dt,xForces[i],yForces[i]);
+				
+			}
 			
 			StdDraw.picture(0,0,"images/starfield.jpg");
 			

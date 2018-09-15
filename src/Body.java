@@ -11,6 +11,7 @@ public class Body {
 		myMass = mass;
 		myFileName = filename;
 		
+		
 			
 		
 		
@@ -147,6 +148,7 @@ public class Body {
 	
 
 	public void draw() {
+		StdDraw.picture(myXPos, myYPos, "images/"+myFileName);
 		
 	} 
 }
