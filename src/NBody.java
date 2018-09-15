@@ -76,10 +76,10 @@ public class NBody {
 				double myXVel = s.nextDouble();
 				double myYVel = s.nextDouble();
 				double myMass = s.nextDouble();
-				String myFileName = s.nextLine();
+				String myFileName = s.next();
 				bod[k] = new Body(myXPos,myYPos,myXVel,myYVel,myMass,myFileName);
 			
-				//t.nextLine();
+				//s.nextLine();
 				
 			}
 			
