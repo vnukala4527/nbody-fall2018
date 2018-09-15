@@ -47,12 +47,14 @@ public class NBody {
 			int nb = 0; // # bodies to be read
 			//int bodies = s.nextInt();
 			//double radius = s.nextDouble();
-			while (s.hasNextDouble()) {
+			/* while (s.hasNextDouble()) {
 		          nb += 1;
 		          s.nextDouble();
 		         
 		      }
-			nb = (nb - 1)/5;
+			nb = (nb - 1)/5; */
+			
+			nb = s.nextInt();
 			Body[] bod = new Body[nb];
 			
 			
@@ -60,26 +62,28 @@ public class NBody {
 			//s.reset();
 			//s.nextInt();
 			//double radius = s.nextDouble();
-			s.close();
-			Scanner t = new Scanner(new File(fname));
+			//s.close();
+			//Scanner t = new Scanner(new File(fname));
+			double radius = s.nextDouble();
 			
 			for(int k=0; k < nb; k++) {
 				
 				// TODO: read data for each body
 				// construct new body object and add to array
 				
-				double myXPos = t.nextDouble();
-				double myYPos = t.nextDouble();
-				double myXVel = t.nextDouble();
-				double myYVel = t.nextDouble();
-				double myMass = t.nextDouble();
-				String myFileName = t.next();
+				double myXPos = s.nextDouble();
+				double myYPos = s.nextDouble();
+				double myXVel = s.nextDouble();
+				double myYVel = s.nextDouble();
+				double myMass = s.nextDouble();
+				String myFileName = s.nextLine();
 				bod[k] = new Body(myXPos,myYPos,myXVel,myYVel,myMass,myFileName);
-				t.nextLine();
+			
+				//t.nextLine();
 				
 			}
 			
-			t.close();
+			s.close();
 			
 			// TODO: return array of body objects read
 			return bod;
